@@ -646,20 +646,20 @@
             "MolWeight": 588.6
           },
           "Values": [
-            49502.53,
-            36504.99,
-            32393.35,
-            22878.47,
-            18819.799,
-            14345.17,
-            10705.63,
-            7403.627,
-            6094.348,
-            3618.805,
-            2425.57
+            49.50253,
+            36.50499,
+            32.39335,
+            22.87847,
+            18.8198,
+            14.34517,
+            10.70563,
+            7.403627,
+            6.094348,
+            3.618805,
+            2.42557
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "µg/l"
+          "Unit": "mg/l"
         }
       ],
       "BaseGrid": {
@@ -700,6 +700,75 @@
           "ObservedData": "Walker 1979 - Volunteer 6 - Amikacin - iv - 500 mg - Plasma - indiv."
         }
       ],
+      "Charts": [
+        {
+          "Axes": [
+            {
+              "Unit": "h",
+              "Dimension": "Time",
+              "Type": "X",
+              "GridLines": false,
+              "Visible": true,
+              "DefaultColor": "#FFFFFF",
+              "DefaultLineStyle": "None",
+              "Scaling": "Linear",
+              "NumberMode": "Normal"
+            },
+            {
+              "Unit": "µmol/l",
+              "Dimension": "Concentration (molar)",
+              "Type": "Y",
+              "GridLines": false,
+              "Visible": true,
+              "DefaultColor": "#FFFFFF",
+              "DefaultLineStyle": "Solid",
+              "Scaling": "Log",
+              "NumberMode": "Normal"
+            }
+          ],
+          "Curves": [
+            {
+              "Name": "PeripheralVenousBlood-Amikacin-Plasma (Peripheral Venous Blood)",
+              "X": "Time",
+              "Y": "Walker 1979 Volunteer 6|Organism|PeripheralVenousBlood|Amikacin|Plasma (Peripheral Venous Blood)",
+              "CurveOptions": {
+                "Color": "#FF0000",
+                "LegendIndex": 1
+              }
+            },
+            {
+              "Name": "Walker 1979 - Volunteer 6 - Amikacin - iv - 500 mg - Plasma - indiv.-ObservedData-Peripheral Venous Blood-Plasma-Amikacin-Individual",
+              "X": "Walker 1979 - Volunteer 6 - Amikacin - iv - 500 mg - Plasma - indiv.|Time",
+              "Y": "Walker 1979 - Volunteer 6 - Amikacin - iv - 500 mg - Plasma - indiv.|ObservedData|Peripheral Venous Blood|Plasma|Amikacin|Individual",
+              "CurveOptions": {
+                "Color": "#0000FF",
+                "LegendIndex": 2,
+                "LineStyle": "None",
+                "Symbol": "Circle"
+              }
+            }
+          ],
+          "Name": "Time Profile",
+          "FontAndSize": {
+            "Fonts": {
+              "AxisSize": 10,
+              "LegendSize": 8,
+              "TitleSize": 16,
+              "DescriptionSize": 12,
+              "OriginSize": 8,
+              "FontFamilyName": "Microsoft Sans Serif",
+              "WatermarkSize": 32
+            }
+          },
+          "Settings": {
+            "SideMarginsEnabled": true,
+            "LegendPosition": "RightInside",
+            "BackColor": "#FFFFFF",
+            "DiagramBackColor": "#FFFFFF"
+          },
+          "OriginText": "Walker 1979 Volunteer 6\nWalker 1979 Volunteer 6\n2026-04-21 13:18"
+        }
+      ],
       "Configuration": {
         "Settings": {
           "Name": "Walker 1979 Volunteer 6",
@@ -735,7 +804,7 @@
               ]
             }
           ],
-          "RandomSeed": 15999140.0
+          "RandomSeed": 23252625.0
         },
         "IndividualBuildingBlock": "Walker 1979 Volunteer 6",
         "ExpressionProfiles": [],
