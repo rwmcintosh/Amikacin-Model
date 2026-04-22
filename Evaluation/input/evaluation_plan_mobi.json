@@ -2,15 +2,8 @@
     "$schema": "https://github.com/Open-Systems-Pharmacology/QualificationPlan/releases/download/v3.3/OSP_Qualification_Plan_Schema.json",
     "Projects": [
         {
-            "Id": "Walker_1979_Volunteer_6",
-            "Path": "../../Walker 1979 Volunteer 6.json",
-            "Application": "MoBi",
-            "BuildingBlocks": [],
-            "SimulationParameters": []
-        },
-        {
-            "Id": "Walker_1979_Volunteer_9",
-            "Path": "../../Walker 1979 Volunteer 9.json",
+            "Id": "Walker_1979_Combined",
+            "Path": "../../Walker 1979 Combined.json",
             "Application": "MoBi",
             "BuildingBlocks": [],
             "SimulationParameters": []
@@ -129,12 +122,12 @@
         },
         "AllPlots": [
             {
-                "Project": "Walker_1979_Volunteer_6",
+                "Project": "Walker_1979_Combined",
                 "Simulation": "Walker 1979 Volunteer 6",
                 "SectionReference": "concentration-time-profiles"
             },
             {
-                "Project": "Walker_1979_Volunteer_9",
+                "Project": "Walker_1979_Combined",
                 "Simulation": "Walker 1979 Volunteer 9",
                 "SectionReference": "concentration-time-profiles"
             }
@@ -156,14 +149,14 @@
                         "Symbol": "Triangle",
                         "OutputMappings": [
                             {
-                                "Project": "Walker_1979_Volunteer_6",
+                                "Project": "Walker_1979_Combined",
                                 "Simulation": "Walker 1979 Volunteer 6",
                                 "Output": "Organism|PeripheralVenousBlood|Amikacin|Plasma (Peripheral Venous Blood)",
                                 "ObservedData": "Walker 1979 - Volunteer 6 - Amikacin - iv - 500 mg - Plasma - indiv.",
                                 "Color": "#000000"
                             },
                             {
-                                "Project": "Walker_1979_Volunteer_9",
+                                "Project": "Walker_1979_Combined",
                                 "Simulation": "Walker 1979 Volunteer 9",
                                 "Output": "Organism|PeripheralVenousBlood|Amikacin|Plasma (Peripheral Venous Blood)",
                                 "ObservedData": "Walker 1979 - Volunteer 9 - Amikacin - iv - 500 mg - Plasma - indiv.",
@@ -180,9 +173,24 @@
     },
     "Inputs": [
         {
-            "Project": "Walker_1979_Volunteer_6",
+            "Project": "Walker_1979_Combined",
+            "PKSimModule": "Walker 1979 Volunteer 6",
             "Name": "Amikacin",
             "Type": "Compound",
+            "SectionReference": "final-input-parameters"
+        },
+        {
+            "Project": "Walker_1979_Combined",
+            "PKSimModule": "Walker 1979 Volunteer 6",
+            "Name": "Walker 1979 Volunteer 6",
+            "Type": "Individual",
+            "SectionReference": "final-input-parameters"
+        },
+        {
+            "Project": "Walker_1979_Combined",
+            "PKSimModule": "Walker 1979 Volunteer 9",
+            "Name": "Walker 1979 Volunteer 9",
+            "Type": "Individual",
             "SectionReference": "final-input-parameters"
         }
     ],
