@@ -1,0 +1,408 @@
+{
+  "Version": 19,
+  "PKSimModules": [
+    {
+      "Name": "Walker 1979 Volunteer 7",
+      "Version": 81,
+      "Individuals": [
+        {
+          "Name": "Walker 1979 Volunteer 7",
+          "Seed": 182043650,
+          "OriginData": {
+            "CalculationMethods": [
+              "SurfaceAreaPlsInt_VAR1",
+              "Body surface area - Mosteller"
+            ],
+            "Species": "Human",
+            "Population": "European_ICRP_2002",
+            "Gender": "MALE",
+            "Age": {
+              "Value": 27.0,
+              "Unit": "year(s)"
+            },
+            "Weight": {
+              "Value": 68.7,
+              "Unit": "kg"
+            },
+            "ValueOrigin": {
+              "Source": "Publication",
+              "Method": "InVivo",
+              "Description": "Walker 1979"
+            }
+          },
+          "ExpressionProfiles": []
+        }
+      ],
+      "Compounds": [
+        {
+          "Name": "Amikacin",
+          "IsSmallMolecule": true,
+          "PlasmaProteinBindingPartner": "Albumin",
+          "Lipophilicity": [
+            {
+              "Name": "Measurement",
+              "Parameters": [
+                {
+                  "Name": "Lipophilicity",
+                  "Value": -0.48,
+                  "Unit": "Log Units",
+                  "ValueOrigin": {
+                    "Source": "Publication",
+                    "Method": "Other",
+                    "Description": "Claassen et al 2015"
+                  }
+                }
+              ]
+            }
+          ],
+          "FractionUnbound": [
+            {
+              "Name": "Measurement",
+              "Species": "Human",
+              "Parameters": [
+                {
+                  "Name": "Fraction unbound (plasma, reference value)",
+                  "Value": 1.0,
+                  "ValueOrigin": {
+                    "Source": "Publication",
+                    "Method": "Other",
+                    "Description": "Claassen et al 2015"
+                  }
+                }
+              ]
+            }
+          ],
+          "Solubility": [
+            {
+              "Name": "Measurement",
+              "Parameters": [
+                {
+                  "Name": "Solubility at reference pH",
+                  "Value": 50.0,
+                  "Unit": "mg/l",
+                  "ValueOrigin": {
+                    "Source": "Publication",
+                    "Method": "InVitro",
+                    "Description": "Drugbank.de"
+                  }
+                },
+                {
+                  "Name": "Reference pH",
+                  "Value": 7.0,
+                  "ValueOrigin": {
+                    "Source": "Publication",
+                    "Method": "InVitro",
+                    "Description": "Drugbank.de"
+                  }
+                }
+              ]
+            }
+          ],
+          "PkaTypes": [
+            {
+              "Type": "Base",
+              "Pka": 9.7,
+              "ValueOrigin": {
+                "Source": "Publication",
+                "Description": "Claassen et al 2015"
+              }
+            },
+            {
+              "Type": "Base",
+              "Pka": 8.92,
+              "ValueOrigin": {
+                "Source": "Publication",
+                "Description": "Claassen et al 2015"
+              }
+            },
+            {
+              "Type": "Base",
+              "Pka": 8.13,
+              "ValueOrigin": {
+                "Source": "Publication",
+                "Description": "Claassen et al 2015"
+              }
+            }
+          ],
+          "Processes": [
+            {
+              "InternalName": "GlomerularFiltration",
+              "DataSource": "Claassen et al 2015",
+              "Species": "Human",
+              "Parameters": [
+                {
+                  "Name": "GFR fraction",
+                  "Value": 1.0,
+                  "ValueOrigin": {
+                    "Source": "Publication",
+                    "Description": "Claassen et al 2015"
+                  }
+                }
+              ]
+            }
+          ],
+          "CalculationMethods": [
+            "Cellular partition coefficient method - PK-Sim Standard",
+            "Cellular permeability - PK-Sim Standard"
+          ],
+          "Parameters": [
+            {
+              "Name": "Molecular weight",
+              "Value": 588.6,
+              "Unit": "g/mol",
+              "ValueOrigin": {
+                "Source": "Publication",
+                "Description": "Claassen et al 2015"
+              }
+            }
+          ]
+        }
+      ],
+      "Protocols": [
+        {
+          "Name": "Walker 1979 Volunteer 1",
+          "ApplicationType": "Intravenous",
+          "DosingInterval": "Single",
+          "Parameters": [
+            {
+              "Name": "Start time",
+              "Value": 0.0,
+              "Unit": "h",
+              "ValueOrigin": {}
+            },
+            {
+              "Name": "InputDose",
+              "Value": 500.0,
+              "Unit": "mg",
+              "ValueOrigin": {}
+            },
+            {
+              "Name": "Infusion time",
+              "Value": 4.0,
+              "Unit": "min",
+              "ValueOrigin": {}
+            }
+          ]
+        }
+      ],
+      "Simulations": [
+        {
+          "Name": "Walker 1979 Volunteer 7",
+          "Model": "4Comp",
+          "Solver": {},
+          "OutputSchema": [
+            {
+              "Parameters": [
+                {
+                  "Name": "Start time",
+                  "Value": 0.0,
+                  "Unit": "h",
+                  "ValueOrigin": {}
+                },
+                {
+                  "Name": "End time",
+                  "Value": 24.0,
+                  "Unit": "h",
+                  "ValueOrigin": {
+                    "Source": "Unknown"
+                  }
+                },
+                {
+                  "Name": "Resolution",
+                  "Value": 10.0,
+                  "Unit": "pts/h",
+                  "ValueOrigin": {
+                    "Source": "Unknown"
+                  }
+                }
+              ]
+            }
+          ],
+          "Parameters": [
+            {
+              "Path": "Events|Walker 1979 Volunteer 1|Application_1|ProtocolSchemaItem|Infusion time",
+              "Value": 4.0,
+              "Unit": "min",
+              "ValueOrigin": {}
+            }
+          ],
+          "OutputSelections": [
+            "Organism|PeripheralVenousBlood|Amikacin|Plasma (Peripheral Venous Blood)",
+            "Organism|Kidney|Urine|Amikacin|Fraction excreted to urine"
+          ],
+          "Individual": "Walker 1979 Volunteer 7",
+          "Compounds": [
+            {
+              "Name": "Amikacin",
+              "CalculationMethods": [
+                "Cellular partition coefficient method - PK-Sim Standard",
+                "Cellular permeability - PK-Sim Standard"
+              ],
+              "Processes": [
+                {
+                  "Name": "Glomerular Filtration-Claassen et al 2015",
+                  "SystemicProcessType": "GFR"
+                }
+              ],
+              "Protocol": {
+                "Name": "Walker 1979 Volunteer 1"
+              }
+            }
+          ],
+          "HasResults": false,
+          "IndividualAnalyses": [
+            {
+              "Axes": [
+                {
+                  "Unit": "h",
+                  "Dimension": "Time",
+                  "Type": "X",
+                  "GridLines": false,
+                  "Visible": true,
+                  "DefaultColor": "#FFFFFF",
+                  "DefaultLineStyle": "None",
+                  "Scaling": "Linear",
+                  "NumberMode": "Normal"
+                },
+                {
+                  "Unit": "µmol/l",
+                  "Dimension": "Concentration (molar)",
+                  "Type": "Y",
+                  "GridLines": false,
+                  "Visible": true,
+                  "DefaultColor": "#FFFFFF",
+                  "DefaultLineStyle": "Solid",
+                  "Scaling": "Log",
+                  "NumberMode": "Normal"
+                },
+                {
+                  "Unit": "",
+                  "Dimension": "Fraction",
+                  "Type": "Y2",
+                  "GridLines": false,
+                  "Visible": true,
+                  "DefaultColor": "#FFFFFF",
+                  "DefaultLineStyle": "Dash",
+                  "Scaling": "Log",
+                  "NumberMode": "Normal"
+                }
+              ],
+              "Name": "Time Profile Analysis",
+              "FontAndSize": {
+                "Fonts": {
+                  "AxisSize": 10,
+                  "LegendSize": 8,
+                  "TitleSize": 16,
+                  "DescriptionSize": 12,
+                  "OriginSize": 8,
+                  "FontFamilyName": "Microsoft Sans Serif",
+                  "WatermarkSize": 32
+                }
+              },
+              "Settings": {
+                "SideMarginsEnabled": true,
+                "LegendPosition": "RightInside",
+                "BackColor": "#00FFFFFF",
+                "DiagramBackColor": "#FFFFFF"
+              },
+              "OriginText": "Amikacin_clean\nWalker 1979 Volunteer 7\n2019-05-11 11:10"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "ExtensionModules": [],
+  "ExpressionProfileBuildingBlocks": [],
+  "IndividualBuildingBlocks": [],
+  "Simulations": [
+    {
+      "Name": "Walker 1979 Volunteer 7",
+      "Configuration": {
+        "Settings": {
+          "Name": "Walker 1979 Volunteer 7",
+          "Solver": {
+            "AbsTol": 1E-10,
+            "RelTol": 1E-05
+          },
+          "OutputSchema": [
+            {
+              "Parameters": [
+                {
+                  "Name": "Start time",
+                  "Value": 0.0,
+                  "Unit": "h",
+                  "ValueOrigin": {}
+                },
+                {
+                  "Name": "End time",
+                  "Value": 24.0,
+                  "Unit": "h",
+                  "ValueOrigin": {
+                    "Source": "Unknown"
+                  }
+                },
+                {
+                  "Name": "Resolution",
+                  "Value": 10.0,
+                  "Unit": "pts/h",
+                  "ValueOrigin": {
+                    "Source": "Unknown"
+                  }
+                }
+              ]
+            }
+          ],
+          "RandomSeed": 16000312.0
+        },
+        "IndividualBuildingBlock": "Walker 1979 Volunteer 7",
+        "ExpressionProfiles": [],
+        "ModuleConfigurations": [
+          {
+            "Module": "Walker 1979 Volunteer 7",
+            "SelectedInitialConditions": "Initial Conditions",
+            "SelectedParameterValues": "Parameter Values"
+          }
+        ]
+      },
+      "OutputSelections": [
+        "Organism|PeripheralVenousBlood|Amikacin|Plasma (Peripheral Venous Blood)",
+        "Organism|Kidney|Urine|Amikacin|Fraction excreted to urine"
+      ],
+      "ScaleDivisors": []
+    }
+  ],
+  "ReactionDimensionMode": "AmountBased",
+  "ExpressionProfileSnapshots": [],
+  "IndividualBuildingBlockSnapshots": [
+    {
+      "PKSimSnapshot": {
+        "Name": "Walker 1979 Volunteer 7",
+        "Seed": 182043650,
+        "OriginData": {
+          "CalculationMethods": [
+            "SurfaceAreaPlsInt_VAR1",
+            "Body surface area - Mosteller"
+          ],
+          "Species": "Human",
+          "Population": "European_ICRP_2002",
+          "Gender": "MALE",
+          "Age": {
+            "Value": 27.0,
+            "Unit": "year(s)"
+          },
+          "Weight": {
+            "Value": 68.7,
+            "Unit": "kg"
+          },
+          "ValueOrigin": {
+            "Source": "Publication",
+            "Method": "InVivo",
+            "Description": "Walker 1979"
+          }
+        }
+      },
+      "UpdatedValues": []
+    }
+  ]
+}
